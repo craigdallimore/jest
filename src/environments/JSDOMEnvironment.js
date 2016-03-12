@@ -33,6 +33,10 @@ class JSDOMEnvironment {
   }
 
   runSourceText(sourceText, filename) {
+    console.log(filename);
+    if (!/node_modules/.test(filename)) {
+      console.log(sourceText)
+    }
     return this.global.eval(sourceText + '\n//# sourceURL=' + filename);
   }
 
